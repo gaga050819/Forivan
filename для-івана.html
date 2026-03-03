@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drohobych Map 2026</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e2e8f0, #ffffff);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Стиль рідкого скла */
+        .glass-panel {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 10px;
+            margin-top: 60px;
+        }
+
+        /* Хатка */
+        .home-btn {
+            position: absolute;
+            top: -50px;
+            left: 10px;
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* Карта */
+        .map-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+        }
+
+        /* Позначки (Піни) як на фото */
+        .marker {
+            position: absolute;
+            width: 55px; /* Збільшений розмір */
+            height: 55px;
+            background: #2a3642; /* Темно-синій колір з фото */
+            border: 2px solid white;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            /* Щоб "носик" піна вказував точно на точку: */
+            margin-top: -38px; 
+            margin-left: -18px;
+            box-shadow: -2px 2px 8px rgba(0,0,0,0.4);
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.2s ease;
+        }
+
+        .marker:hover {
+            transform: rotate(-45deg) scale(1.1);
+        }
+
+        /* Центральна біла цятка */
+        .marker::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Футер */
+        footer {
+            width: 100%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .credits {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="glass-panel">
+            <div class="home-btn" onclick="window.scrollTo(0,0)">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+            </div>
+
+            <div class="map-container">
+                <img src="6944.jpg" alt="Мапа">
+
+                <div class="marker" title="Вілла Ландау" style="top: 28%; left: 3.3%;"></div>
+                <div class="marker" title="Вілла Б'янки" style="top: 30.3%; left: 26.3%;"></div>
+                <div class="marker" title="Музей Кімната Б.Шульца" style="top: 17%; left: 37.7%;"></div>
+                <div class="marker" title="15 школа" style="top: 40.4%; left: 45%;"></div>
+                <div class="marker" title="Парк імені С.Бандери" style="top: 42.3%; left: 57.6%;"></div>
+                <div class="marker" title="Юрія Дрогобича 12" style="top: 70.2%; left: 43.6%;"></div>
+                <div class="marker" title="Площа Ринок 10" style="top: 62.5%; left: 66%;"></div>
+                <div class="marker" title="Ліцей ім. Б.Лепкого" style="top: 93.4%; left: 85.7%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <span>©2026</span>
+        </div>
+        <div class="credits">credits:Винницький Іван & Волотко Людмила</div>
+    </footer>
+
+</body>
+</html>
