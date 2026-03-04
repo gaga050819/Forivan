@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вілла Ландау - Drohobych 2026</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e2e8f0, #ffffff);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Хатка, яка веде назад на index.html */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            text-decoration: none; /* Прибираємо підкреслення посилання */
+            transition: transform 0.2s;
+        }
+
+        .home-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .content-img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh; /* Щоб фото не вилазило за межі екрана */
+            object-fit: cover;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2a3642;
+            margin-top: 20px;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-panel">
+        <a href="index.html" class="home-btn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            </svg>
+        </a>
+
+        <h1>Вілла Ландау</h1>
+        
+        <img src="landau_photo.jpg" alt="Вілла Ландау" class="content-img">
+    </div>
+
+</body>
+</html>
