@@ -12,9 +12,11 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Дозволяє контенту починатися зверху, щоб його можна було гортати */
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden; /* Забороняє гортання вбік, але дозволяє вниз */
+            padding: 40px 0; /* Відступи зверху і знизу для зручності */
+            box-sizing: border-box;
         }
 
         @keyframes fadeInUp {
@@ -71,7 +73,7 @@
         .content-img {
             width: 100%;
             height: auto;
-            max-height: 65vh;
+            max-height: 75vh; /* Трохи збільшив для кращого вигляду */
             object-fit: contain;
             border-radius: 20px;
             margin-top: 40px;
@@ -82,12 +84,15 @@
             color: #2a3642;
             margin-top: 20px;
             font-size: 28px;
+            line-height: 1.2;
         }
 
         @media (max-width: 600px) {
+            body { padding-top: 60px; } /* Більше місця для кнопки на мобілці */
             .glass-panel { padding: 20px; width: 95%; }
             h1 { font-size: 20px; }
-            .home-btn { width: 40px; height: 40px; top: 15px; left: 15px; }
+            .home-btn { width: 44px; height: 44px; top: 10px; left: 10px; }
+            .content-img { margin-top: 30px; }
         }
     </style>
 </head>
